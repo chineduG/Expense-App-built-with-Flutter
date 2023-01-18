@@ -3,6 +3,8 @@ import 'package:build101/widgets/trasactions_list.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import 'widgets/new_transactions.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -28,10 +30,6 @@ class ExpenseApp extends StatefulWidget {
 
 class _ExpenseAppState extends State<ExpenseApp> {
 
-  // TextController
-
-   final titleControler = TextEditingController();
-  final amountControler = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -49,33 +47,8 @@ class _ExpenseAppState extends State<ExpenseApp> {
             child: const Card(
                 child: Text('CHART'), elevation: 5, color: Colors.blue),
           ),
-          Card(
-            elevation: 5,
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(children: [
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Title',
-                  ),
-                  controller: titleControler,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Amount',
-                  ),
-                  controller: amountControler,
-                ),
-                ElevatedButton(
-                  child: Text('Add Transaction'),
-                  onPressed: () {
-                    print(titleControler.text);
-                  },
-                )
-              ]),
-            ),
-          ),
-         TransactionList(),
+          NewTransaction(),
+          TransactionList(),
         ],
       ),
     );
