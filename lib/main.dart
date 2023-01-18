@@ -1,9 +1,7 @@
-import 'package:build101/modles/transaction.dart';
 import 'package:build101/widgets/trasactions_list.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'widgets/new_transactions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,8 +45,8 @@ class _ExpenseAppState extends State<ExpenseApp> {
             child: const Card(
                 child: Text('CHART'), elevation: 5, color: Colors.blue),
           ),
-          NewTransaction(),
-          TransactionList(),
+          // NewTransaction(),
+          // TransactionList(),
         ],
       ),
     );
