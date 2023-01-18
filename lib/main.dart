@@ -1,5 +1,6 @@
 import 'package:build101/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,8 @@ class ExpenseApp extends StatefulWidget {
 }
 
 class _ExpenseAppState extends State<ExpenseApp> {
+  // InputData
+
   // Tramsaction
   final List<Transaction> transactions = [
     Transaction(
@@ -41,13 +44,31 @@ class _ExpenseAppState extends State<ExpenseApp> {
         title: const Text('Expense App'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
             width: double.infinity,
             child: const Card(
                 child: Text('CHART'), elevation: 5, color: Colors.blue),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(children: [
+                TextField(
+                  decoration: InputDecoration(labelText: 'Title'),
+                ),
+                TextField(
+                  decoration: InputDecoration(labelText: 'Title'),
+                ),
+                ElevatedButton(
+                  child: Text('Add Transaction'),
+                  onPressed: () {},
+                )
+              ]),
+            ),
           ),
           Column(
             children: transactions.map((tx) {
@@ -73,7 +94,7 @@ class _ExpenseAppState extends State<ExpenseApp> {
                       style: const TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 16)),
                   Text(
-                    tx.date.toString(),
+                    DateFormat.yMMMd().format(tx.date),
                     style: TextStyle(color: Colors.grey),
                   ),
                 ])
