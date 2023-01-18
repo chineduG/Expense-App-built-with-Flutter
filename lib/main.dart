@@ -27,11 +27,6 @@ class ExpenseApp extends StatefulWidget {
 
 class _ExpenseAppState extends State<ExpenseApp> {
 
-  // Transaction
-  final List<Transaction> transactions = [
-   
-  ];
-
   // TextController
 
    final titleControler = TextEditingController();
@@ -79,37 +74,7 @@ class _ExpenseAppState extends State<ExpenseApp> {
               ]),
             ),
           ),
-          Column(
-            children: transactions.map((tx) {
-              return Card(
-                  child: Row(children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  // ignore: sort_child_properties_last
-                  child: Text(
-                    '\$${tx.amount}',
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.purple),
-                  ),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.purple, width: 2)),
-                ),
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(tx.title,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16)),
-                  Text(
-                    DateFormat.yMMMd().format(tx.date),
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ])
-              ]));
-            }).toList(),
-          ),
+         
         ],
       ),
     );
