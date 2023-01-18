@@ -29,10 +29,7 @@ class _ExpenseAppState extends State<ExpenseApp> {
 
   // Transaction
   final List<Transaction> transactions = [
-    Transaction(
-        id: 't1', title: 'New Shoes', amount: 67.99, date: DateTime.now()),
-    Transaction(
-        id: 't2', title: 'New Bags', amount: 35.89, date: DateTime.now())
+   
   ];
 
   // TextController
