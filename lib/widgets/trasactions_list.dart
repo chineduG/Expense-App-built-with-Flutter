@@ -2,27 +2,17 @@ import 'package:build101/modles/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class TransactionList extends StatefulWidget {
-  const TransactionList({super.key});
+class TransactionList extends StatelessWidget {
+  //! const was here
+  // TransactionList({super.key});
 
-  @override
-  State<TransactionList> createState() => _TransactionListState();
-}
+  final List<Transaction> transaction;
 
-class _TransactionListState extends State<TransactionList> {
-
-  //! Predefined list of transactions.
-  final List<Transaction> _userTransactions = [
-    Transaction(
-        id: 't1', title: 'New Shoes', amount: 67.99, date: DateTime.now()),
-    Transaction(
-        id: 't2', title: 'New Bags', amount: 35.89, date: DateTime.now())
-  ];
-
+  TransactionList(this.transaction);
 
   Widget build(BuildContext context) {
     return Column(
-      children: _userTransactions.map((tx) {
+      children: transaction.map((tx) {
         return Card(
             child: Row(children: [
           Container(
@@ -53,6 +43,3 @@ class _TransactionListState extends State<TransactionList> {
     );
   }
 }
-
-
-
