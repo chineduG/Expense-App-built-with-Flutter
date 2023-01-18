@@ -1,4 +1,5 @@
 import 'package:build101/modles/transaction.dart';
+import 'package:build101/widgets/trasaction_list.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -74,7 +75,7 @@ class _ExpenseAppState extends State<ExpenseApp> {
               ]),
             ),
           ),
-         
+         TransactionList(),
         ],
       ),
     );
