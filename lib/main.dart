@@ -1,4 +1,4 @@
-import 'package:build101/transaction.dart';
+import 'package:build101/modles/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -26,15 +26,19 @@ class ExpenseApp extends StatefulWidget {
 }
 
 class _ExpenseAppState extends State<ExpenseApp> {
-  // InputData
 
-  // Tramsaction
+  // Transaction
   final List<Transaction> transactions = [
     Transaction(
         id: 't1', title: 'New Shoes', amount: 67.99, date: DateTime.now()),
     Transaction(
         id: 't2', title: 'New Bags', amount: 35.89, date: DateTime.now())
   ];
+
+  // TextController
+
+   final titleControler = TextEditingController();
+  final amountControler = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +62,22 @@ class _ExpenseAppState extends State<ExpenseApp> {
               padding: EdgeInsets.all(10),
               child: Column(children: [
                 TextField(
-                  decoration: InputDecoration(labelText: 'Title'),
+                  decoration: InputDecoration(
+                    labelText: 'Title',
+                  ),
+                  controller: titleControler,
                 ),
                 TextField(
-                  decoration: InputDecoration(labelText: 'Title'),
+                  decoration: InputDecoration(
+                    labelText: 'Amount',
+                  ),
+                  controller: amountControler,
                 ),
                 ElevatedButton(
                   child: Text('Add Transaction'),
-                  onPressed: () {},
+                  onPressed: () {
+                    print(titleControler.text);
+                  },
                 )
               ]),
             ),
