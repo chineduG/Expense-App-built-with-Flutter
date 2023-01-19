@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 
 import 'widgets/user_transactions.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -29,8 +28,6 @@ class ExpenseApp extends StatefulWidget {
 }
 
 class _ExpenseAppState extends State<ExpenseApp> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
