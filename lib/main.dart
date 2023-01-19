@@ -35,19 +35,21 @@ class _ExpenseAppState extends State<ExpenseApp> {
         centerTitle: true,
         title: const Text('Expense App'),
       ),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            width: double.infinity,
-            child: const Card(
-                child: Text('CHART'), elevation: 5, color: Colors.blue),
-          ),
-          const UserTransaction()
-          // NewTransaction(),
-          // TransactionList(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              width: double.infinity,
+              child: const Card(
+                  child: Text('CHART'), elevation: 5, color: Colors.blue),
+            ),
+            const UserTransaction()
+            // NewTransaction(),
+            // TransactionList(),
+          ],
+        ),
       ),
     );
   }
