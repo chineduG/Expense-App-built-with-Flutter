@@ -34,6 +34,12 @@ class _ExpenseAppState extends State<ExpenseApp> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Expense App'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {},
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -50,6 +56,10 @@ class _ExpenseAppState extends State<ExpenseApp> {
             // TransactionList(),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
       ),
     );
   }

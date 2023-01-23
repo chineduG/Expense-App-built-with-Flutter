@@ -38,7 +38,7 @@ class TransactionList extends StatelessWidget {
                 DateFormat.yMMMd().format(transaction[index].date),
                 style: TextStyle(color: Colors.grey),
               ),
-            ])
+            ])  
           ]));
         },
         itemCount: transaction.length,
