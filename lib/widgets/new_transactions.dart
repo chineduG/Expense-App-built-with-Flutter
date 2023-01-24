@@ -22,6 +22,9 @@ class _NewTransactionState extends State<NewTransaction> {
       return;
     }
     widget.addTx(enteredTitle, enteredAmount);
+
+//! to pop out a screen
+    Navigator.of(context).pop(); 
   }
 
   @override
