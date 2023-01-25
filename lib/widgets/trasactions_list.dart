@@ -6,15 +6,15 @@ class TransactionList extends StatelessWidget {
   //! const was here
   // TransactionList({super.key});
 
-  final List<Transaction> transaction; 
+  final List<Transaction> transaction;
   TransactionList(this.transaction);
 
   Widget build(BuildContext context) {
     return Container(
       height: 300,
       child: ListView.builder(
-        itemBuilder: (ctx, index){
-           return Card(
+        itemBuilder: (ctx, index) {
+          return Card(
               child: Row(children: [
             Container(
               padding: const EdgeInsets.all(10),
@@ -33,12 +33,18 @@ class TransactionList extends StatelessWidget {
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(transaction[index].title,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 16)),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 19,
+                      fontFamily: 'Explora')),
               Text(
                 DateFormat.yMMMd().format(transaction[index].date),
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: 'Explora',
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
               ),
-            ])  
+            ])
           ]));
         },
         itemCount: transaction.length,
