@@ -16,11 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.purple, 
+        primarySwatch: Colors.purple,
         fontFamily: 'Aboreto',
-        ),
+      ),
       debugShowCheckedModeBanner: false,
-      
       home: ExpenseApp(),
     );
   }
@@ -38,10 +37,10 @@ class _ExpenseAppState extends State<ExpenseApp> {
 
   //! Predefined list of transactions.
   final List<Transaction> _userTransactions = [
-    Transaction(
-        id: 't1', title: 'New Shoes', amount: 67.99, date: DateTime.now()),
-    Transaction(
-        id: 't2', title: 'New Bags', amount: 35.89, date: DateTime.now())
+    // Transaction(
+    //     id: 't1', title: 'New Shoes', amount: 67.99, date: DateTime.now()),
+    // Transaction(
+    //     id: 't2', title: 'New Bags', amount: 35.89, date: DateTime.now())
   ];
 
 //! Get user transactions.
